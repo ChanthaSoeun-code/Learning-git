@@ -11,19 +11,16 @@
     <meta name="author" content="GitQuest" />
     <title>GitQuest | Learn Git &amp; GitHub</title>
 
-    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       referrerpolicy="no-referrer"
     />
 
-    <!-- Project stylesheet -->
     <link rel="stylesheet" href="css/Style.css" />
   </head>
 
   <body>
-    <!-- Skip link for keyboard and screen reader users -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <div class="app-layout">
@@ -90,9 +87,6 @@
         <p class="sidebar-footnote" lang="km">រៀន Git ជាភាសាសាមញ្ញ</p>
       </aside>
 
-      <!-- ============================================================
-         MAIN COLUMN (header + main + footer)
-         ============================================================ -->
       <div class="main-column">
         <!-- ==========================================================
            B. HEADER
@@ -105,7 +99,6 @@
             <h1 class="topbar-title">Ready to level up your Git skills?</h1>
           </div>
 
-          <!-- Search field for lessons -->
           <form
             class="search-form"
             id="lesson-search-form"
@@ -134,25 +127,24 @@
             </button>
           </form>
 
-          <!-- User profile area + level / XP summary -->
           <div class="profile-area" id="profile">
             <div class="level-summary">
               <p class="level-badge">
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
-                <span>Level <span id="header-level">3</span></span>
+                <span>Level <span id="header-level">1</span></span>
               </p>
-              <p class="xp-summary"><span id="header-xp">1,240</span> XP</p>
+              <p class="xp-summary"><span id="header-xp">0</span> XP</p>
             </div>
 
             <a
               class="profile-chip"
               href="#profile"
-              aria-label="Open your profile: Sokha, Level 3, 1240 XP"
+              aria-label="Open your profile"
             >
               <span class="avatar" aria-hidden="true">SK</span>
               <span class="profile-chip-text">
                 <span class="profile-name">Sokha</span>
-                <span class="profile-role">Commit Cadet</span>
+                <span class="profile-role">Fresh Clone</span>
               </span>
             </a>
           </div>
@@ -165,7 +157,11 @@
           <!-- ========================================================
              C. WELCOME HERO
              ======================================================== -->
-          <section class="hero" id="dashboard" aria-labelledby="hero-title">
+          <section
+            class="hero dashboard-section"
+            id="dashboard"
+            aria-labelledby="hero-title"
+          >
             <div class="hero-content">
               <p class="hero-eyebrow">
                 <i class="fa-solid fa-terminal" aria-hidden="true"></i>
@@ -207,7 +203,6 @@
               </div>
             </div>
 
-            <!-- Decorative illustration: a terminal window with a Git branch graph -->
             <div class="hero-visual">
               <svg
                 class="hero-illustration"
@@ -220,8 +215,6 @@
                   A terminal window showing a Git commit history where a feature
                   branch merges into the main branch
                 </title>
-
-                <!-- Window frame -->
                 <rect
                   x="6"
                   y="6"
@@ -241,8 +234,6 @@
                 <circle cx="30" cy="24" r="5" fill="#ff5f56" />
                 <circle cx="48" cy="24" r="5" fill="#ffbd2e" />
                 <circle cx="66" cy="24" r="5" fill="#27c93f" />
-
-                <!-- Branch graph -->
                 <path
                   d="M40 150 H380"
                   stroke="#58a6ff"
@@ -257,8 +248,6 @@
                   stroke-linecap="round"
                   fill="none"
                 />
-
-                <!-- Commits on main -->
                 <circle
                   cx="40"
                   cy="150"
@@ -299,8 +288,6 @@
                   stroke="#58a6ff"
                   stroke-width="3"
                 />
-
-                <!-- Commits on feature branch -->
                 <circle
                   cx="154"
                   cy="92"
@@ -317,8 +304,6 @@
                   stroke="#bc8cff"
                   stroke-width="3"
                 />
-
-                <!-- Branch labels -->
                 <text
                   x="40"
                   y="182"
@@ -337,8 +322,6 @@
                 >
                   feature
                 </text>
-
-                <!-- Command output lines -->
                 <rect
                   x="30"
                   y="208"
@@ -387,7 +370,7 @@
              D. LEARNING PROGRESS
              ======================================================== -->
           <section
-            class="section"
+            class="section dashboard-section"
             id="progress"
             aria-labelledby="progress-title"
           >
@@ -401,72 +384,67 @@
             </div>
 
             <div class="progress-overview">
-              <!-- Overall progress bar -->
               <div class="progress-main">
                 <div class="progress-head">
                   <span class="progress-label">Overall learning progress</span>
                   <span class="progress-percent" id="overall-progress-value"
-                    >42%</span
+                    >0%</span
                   >
                 </div>
                 <progress
                   class="progress-bar progress-bar-lg"
                   id="overall-progress"
-                  value="42"
+                  value="0"
                   max="100"
                   aria-label="Overall learning progress"
                 >
-                  42%
+                  0%
                 </progress>
                 <p class="progress-hint">
-                  You are 42% through the GitQuest path. Keep going!
-                  <span lang="km">អ្នកបានបញ្ចប់ ៤២% នៃផ្លូវរៀន។</span>
+                  Complete lessons to fill this bar.
+                  <span lang="km">បញ្ចប់មេរៀនដើម្បីបំពេញរបារនេះ។</span>
                 </p>
               </div>
 
-              <!-- Key stats -->
               <ul class="stat-grid">
                 <li class="stat-card">
-                  <span class="stat-icon" aria-hidden="true">
-                    <i class="fa-solid fa-circle-check"></i>
-                  </span>
+                  <span class="stat-icon" aria-hidden="true"
+                    ><i class="fa-solid fa-circle-check"></i
+                  ></span>
                   <p class="stat-value">
-                    <span id="completed-lessons">4</span>
+                    <span id="completed-lessons">0</span>
                     <span class="stat-unit"
-                      >/ <span id="total-lessons">12</span></span
+                      >/ <span id="total-lessons">10</span></span
                     >
                   </p>
                   <p class="stat-label">Lessons completed</p>
                 </li>
-
                 <li class="stat-card">
-                  <span class="stat-icon" aria-hidden="true">
-                    <i class="fa-solid fa-bolt"></i>
-                  </span>
+                  <span class="stat-icon" aria-hidden="true"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></span>
                   <p class="stat-value">
-                    <span id="xp-display">1,240</span>
+                    <span id="xp-display">0</span>
                     <span class="stat-unit">XP</span>
                   </p>
                   <p class="stat-label">Total XP earned</p>
                 </li>
-
                 <li class="stat-card">
-                  <span class="stat-icon" aria-hidden="true">
-                    <i class="fa-solid fa-star"></i>
-                  </span>
+                  <span class="stat-icon" aria-hidden="true"
+                    ><i class="fa-solid fa-star"></i
+                  ></span>
                   <p class="stat-value">
-                    <span id="current-level">3</span>
-                    <span class="stat-unit">Commit Cadet</span>
+                    <span id="current-level">1</span>
+                    <span class="stat-unit">Level</span>
                   </p>
                   <p class="stat-label">Current level</p>
                 </li>
-
                 <li class="stat-card">
-                  <span class="stat-icon" aria-hidden="true">
-                    <i class="fa-solid fa-fire"></i>
-                  </span>
+                  <span class="stat-icon" aria-hidden="true"
+                    ><i class="fa-solid fa-fire"></i
+                  ></span>
                   <p class="stat-value">
-                    <span id="streak-count">5</span>
+                    <span id="streak-count">0</span>
                     <span class="stat-unit">days</span>
                   </p>
                   <p class="stat-label">Daily learning streak</p>
@@ -476,9 +454,13 @@
           </section>
 
           <!-- ========================================================
-             E. CONTINUE LEARNING
+             E. CONTINUE LEARNING (rendered from app.js)
              ======================================================== -->
-          <section class="section" id="lessons" aria-labelledby="lessons-title">
+          <section
+            class="section dashboard-section"
+            id="lessons"
+            aria-labelledby="lessons-title"
+          >
             <div class="section-head">
               <h2 class="section-title" id="lessons-title">
                 Continue Learning
@@ -488,306 +470,17 @@
               </p>
             </div>
 
-            <div class="lesson-grid" id="lesson-grid">
-              <!-- Lesson 1 -->
-              <article
-                class="lesson-card"
-                id="lesson-card-1"
-                data-lesson-id="git-basics"
-              >
-                <div class="lesson-card-head">
-                  <span class="lesson-icon" aria-hidden="true">
-                    <i class="fa-solid fa-book-open"></i>
-                  </span>
-                  <span class="badge badge-beginner">Beginner</span>
-                </div>
-                <h3 class="lesson-title">Git Basics</h3>
-                <p class="lesson-desc">
-                  Understand version control and why Git matters for every
-                  developer.
-                </p>
-                <p class="lesson-desc-km" lang="km">
-                  រៀនគោលគំនិតមូលដ្ឋាននៃ Git និងហេតុអ្វីវាសំខាន់។
-                </p>
-                <div class="lesson-progress">
-                  <div class="lesson-progress-head">
-                    <span>Progress</span>
-                    <span
-                      class="lesson-progress-value"
-                      id="lesson-progress-value-1"
-                      >100%</span
-                    >
-                  </div>
-                  <progress
-                    class="progress-bar"
-                    id="lesson-progress-1"
-                    value="100"
-                    max="100"
-                    aria-label="Git Basics lesson progress"
-                  >
-                    100%
-                  </progress>
-                </div>
-                <button
-                  class="btn btn-primary btn-block"
-                  type="button"
-                  id="lesson-start-1"
-                  data-lesson-id="git-basics"
-                >
-                  Review lesson
-                </button>
-              </article>
-
-              <!-- Lesson 2 -->
-              <article
-                class="lesson-card"
-                id="lesson-card-2"
-                data-lesson-id="installation-setup"
-              >
-                <div class="lesson-card-head">
-                  <span class="lesson-icon" aria-hidden="true">
-                    <i class="fa-solid fa-download"></i>
-                  </span>
-                  <span class="badge badge-beginner">Beginner</span>
-                </div>
-                <h3 class="lesson-title">Git Installation and Setup</h3>
-                <p class="lesson-desc">
-                  Install Git on Windows, macOS, or Linux and check that it
-                  works.
-                </p>
-                <p class="lesson-desc-km" lang="km">
-                  ដំឡើង Git លើកុំព្យូទ័ររបស់អ្នក និងពិនិត្យថាវាដំណើរការ។
-                </p>
-                <div class="lesson-progress">
-                  <div class="lesson-progress-head">
-                    <span>Progress</span>
-                    <span
-                      class="lesson-progress-value"
-                      id="lesson-progress-value-2"
-                      >100%</span
-                    >
-                  </div>
-                  <progress
-                    class="progress-bar"
-                    id="lesson-progress-2"
-                    value="100"
-                    max="100"
-                    aria-label="Git Installation and Setup lesson progress"
-                  >
-                    100%
-                  </progress>
-                </div>
-                <button
-                  class="btn btn-primary btn-block"
-                  type="button"
-                  id="lesson-start-2"
-                  data-lesson-id="installation-setup"
-                >
-                  Review lesson
-                </button>
-              </article>
-
-              <!-- Lesson 3 -->
-              <article
-                class="lesson-card"
-                id="lesson-card-3"
-                data-lesson-id="git-configuration"
-              >
-                <div class="lesson-card-head">
-                  <span class="lesson-icon" aria-hidden="true">
-                    <i class="fa-solid fa-sliders"></i>
-                  </span>
-                  <span class="badge badge-beginner">Beginner</span>
-                </div>
-                <h3 class="lesson-title">Git Configuration</h3>
-                <p class="lesson-desc">
-                  Set your name and email so every commit is linked to you.
-                </p>
-                <p class="lesson-desc-km" lang="km">
-                  កំណត់ឈ្មោះ និងអ៊ីមែល សម្រាប់ commit របស់អ្នក។
-                </p>
-                <div class="lesson-progress">
-                  <div class="lesson-progress-head">
-                    <span>Progress</span>
-                    <span
-                      class="lesson-progress-value"
-                      id="lesson-progress-value-3"
-                      >60%</span
-                    >
-                  </div>
-                  <progress
-                    class="progress-bar"
-                    id="lesson-progress-3"
-                    value="60"
-                    max="100"
-                    aria-label="Git Configuration lesson progress"
-                  >
-                    60%
-                  </progress>
-                </div>
-                <button
-                  class="btn btn-primary btn-block"
-                  type="button"
-                  id="lesson-start-3"
-                  data-lesson-id="git-configuration"
-                >
-                  Continue lesson
-                </button>
-              </article>
-
-              <!-- Lesson 4 -->
-              <article
-                class="lesson-card"
-                id="lesson-card-4"
-                data-lesson-id="init-add-commit"
-              >
-                <div class="lesson-card-head">
-                  <span class="lesson-icon" aria-hidden="true">
-                    <i class="fa-solid fa-code-commit"></i>
-                  </span>
-                  <span class="badge badge-intermediate">Intermediate</span>
-                </div>
-                <h3 class="lesson-title">Git Init, Add, and Commit</h3>
-                <p class="lesson-desc">
-                  Create a repository, stage your files, and save your first
-                  commit.
-                </p>
-                <p class="lesson-desc-km" lang="km">
-                  បង្កើត repository និងរក្សាទុកការផ្លាស់ប្តូរជា commit។
-                </p>
-                <div class="lesson-progress">
-                  <div class="lesson-progress-head">
-                    <span>Progress</span>
-                    <span
-                      class="lesson-progress-value"
-                      id="lesson-progress-value-4"
-                      >25%</span
-                    >
-                  </div>
-                  <progress
-                    class="progress-bar"
-                    id="lesson-progress-4"
-                    value="25"
-                    max="100"
-                    aria-label="Git Init, Add, and Commit lesson progress"
-                  >
-                    25%
-                  </progress>
-                </div>
-                <button
-                  class="btn btn-primary btn-block"
-                  type="button"
-                  id="lesson-start-4"
-                  data-lesson-id="init-add-commit"
-                >
-                  Continue lesson
-                </button>
-              </article>
-
-              <!-- Lesson 5 -->
-              <article
-                class="lesson-card"
-                id="lesson-card-5"
-                data-lesson-id="push-pull"
-              >
-                <div class="lesson-card-head">
-                  <span class="lesson-icon" aria-hidden="true">
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                  </span>
-                  <span class="badge badge-intermediate">Intermediate</span>
-                </div>
-                <h3 class="lesson-title">Git Push and Pull</h3>
-                <p class="lesson-desc">
-                  Send your work to GitHub and bring the latest changes back to
-                  your computer.
-                </p>
-                <p class="lesson-desc-km" lang="km">
-                  ផ្ញើកូដទៅ GitHub និងទាញការផ្លាស់ប្តូរថ្មីមកវិញ។
-                </p>
-                <div class="lesson-progress">
-                  <div class="lesson-progress-head">
-                    <span>Progress</span>
-                    <span
-                      class="lesson-progress-value"
-                      id="lesson-progress-value-5"
-                      >0%</span
-                    >
-                  </div>
-                  <progress
-                    class="progress-bar"
-                    id="lesson-progress-5"
-                    value="0"
-                    max="100"
-                    aria-label="Git Push and Pull lesson progress"
-                  >
-                    0%
-                  </progress>
-                </div>
-                <button
-                  class="btn btn-outline btn-block"
-                  type="button"
-                  id="lesson-start-5"
-                  data-lesson-id="push-pull"
-                >
-                  Start lesson
-                </button>
-              </article>
-
-              <!-- Lesson 6 -->
-              <article
-                class="lesson-card"
-                id="lesson-card-6"
-                data-lesson-id="branches-merging"
-              >
-                <div class="lesson-card-head">
-                  <span class="lesson-icon" aria-hidden="true">
-                    <i class="fa-solid fa-code-branch"></i>
-                  </span>
-                  <span class="badge badge-advanced">Advanced</span>
-                </div>
-                <h3 class="lesson-title">Branches and Merging</h3>
-                <p class="lesson-desc">
-                  Work safely on separate branches, then merge them back
-                  together.
-                </p>
-                <p class="lesson-desc-km" lang="km">
-                  បង្កើតមែកធាងថ្មី និងបញ្ចូលកូដចូលគ្នាវិញ។
-                </p>
-                <div class="lesson-progress">
-                  <div class="lesson-progress-head">
-                    <span>Progress</span>
-                    <span
-                      class="lesson-progress-value"
-                      id="lesson-progress-value-6"
-                      >0%</span
-                    >
-                  </div>
-                  <progress
-                    class="progress-bar"
-                    id="lesson-progress-6"
-                    value="0"
-                    max="100"
-                    aria-label="Branches and Merging lesson progress"
-                  >
-                    0%
-                  </progress>
-                </div>
-                <button
-                  class="btn btn-outline btn-block"
-                  type="button"
-                  id="lesson-start-6"
-                  data-lesson-id="branches-merging"
-                >
-                  Start lesson
-                </button>
-              </article>
-            </div>
+            <div class="lesson-grid" id="lesson-grid" aria-live="polite"></div>
           </section>
 
           <!-- ========================================================
              F. QUIZ ARENA
              ======================================================== -->
-          <section class="section" id="quiz-arena" aria-labelledby="quiz-title">
+          <section
+            class="section dashboard-section"
+            id="quiz-arena"
+            aria-labelledby="quiz-title"
+          >
             <div class="section-head">
               <h2 class="section-title" id="quiz-title">Quiz Arena</h2>
               <p class="section-subtitle" lang="km">
@@ -809,28 +502,21 @@
                 <p class="feature-desc-km" lang="km">
                   សំណួរខ្លីៗអំពី repository, commit, branch និង remote។
                 </p>
-
                 <ul class="feature-meta">
                   <li>
-                    <i class="fa-solid fa-list-check" aria-hidden="true"></i>
-                    <span
-                      ><strong id="quiz-question-count">10</strong>
-                      questions</span
-                    >
+                    <i class="fa-solid fa-list-check" aria-hidden="true"></i
+                    ><span><strong>10</strong> questions</span>
                   </li>
                   <li>
-                    <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                    <span
-                      ><strong id="quiz-xp-reward">150</strong> XP reward</span
-                    >
+                    <i class="fa-solid fa-bolt" aria-hidden="true"></i
+                    ><span><strong>150</strong> XP reward</span>
                   </li>
                   <li>
-                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
-                    <span>About <strong>10</strong> minutes</span>
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i
+                    ><span>About <strong>10</strong> minutes</span>
                   </li>
                 </ul>
               </div>
-
               <div class="feature-card-actions">
                 <button
                   class="btn btn-primary"
@@ -851,7 +537,7 @@
              G. DAILY CHALLENGE
              ======================================================== -->
           <section
-            class="section"
+            class="section dashboard-section"
             id="challenges"
             aria-labelledby="challenge-title"
           >
@@ -874,30 +560,27 @@
                 <p class="feature-desc">
                   Create a new folder, run <code>git init</code>, add a file
                   with <code>git add</code>, then save it with
-                  <code>git commit -m "first commit"</code>. Write the commands
-                  yourself in the challenge terminal.
+                  <code>git commit -m "first commit"</code>.
                 </p>
                 <p class="feature-desc-km" lang="km">
                   បង្កើត folder ថ្មី រត់ <code>git init</code> បន្ថែមឯកសារដោយ
                   <code>git add</code> រួចរក្សាទុកដោយ <code>git commit</code>។
                 </p>
-
                 <ul class="feature-meta">
                   <li>
-                    <i class="fa-solid fa-signal" aria-hidden="true"></i>
-                    <span>Difficulty: <strong>Beginner</strong></span>
+                    <i class="fa-solid fa-signal" aria-hidden="true"></i
+                    ><span>Difficulty: <strong>Beginner</strong></span>
                   </li>
                   <li>
-                    <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                    <span><strong>40</strong> XP reward</span>
+                    <i class="fa-solid fa-bolt" aria-hidden="true"></i
+                    ><span><strong>40</strong> XP reward</span>
                   </li>
                   <li>
-                    <i class="fa-solid fa-fire" aria-hidden="true"></i>
-                    <span>Keeps your streak alive</span>
+                    <i class="fa-solid fa-fire" aria-hidden="true"></i
+                    ><span>Keeps your streak alive</span>
                   </li>
                 </ul>
               </div>
-
               <div class="feature-card-actions">
                 <button
                   class="btn btn-primary"
@@ -907,9 +590,7 @@
                   <i class="fa-solid fa-terminal" aria-hidden="true"></i>
                   Start Challenge
                 </button>
-                <p class="feature-note">
-                  You can ask for a hint at any time — hints cost no XP.
-                </p>
+                <p class="feature-note">Hints cost no XP.</p>
               </div>
             </article>
           </section>
@@ -918,7 +599,7 @@
              H. LEADERBOARD PREVIEW
              ======================================================== -->
           <section
-            class="section"
+            class="section dashboard-section"
             id="leaderboard"
             aria-labelledby="leaderboard-title"
           >
@@ -935,7 +616,6 @@
                 Demonstration data — these learners are sample entries, not real
                 accounts.
               </p>
-
               <ol class="leaderboard-list" id="leaderboard-list">
                 <li
                   class="leaderboard-item is-top"
@@ -943,16 +623,15 @@
                 >
                   <span class="leaderboard-rank" aria-hidden="true">1</span>
                   <span class="avatar" aria-hidden="true">SC</span>
-                  <span class="leaderboard-name">
-                    Sophea Chan
-                    <span class="badge badge-top">
-                      <i class="fa-solid fa-crown" aria-hidden="true"></i>
-                      Top learner
-                    </span>
-                  </span>
+                  <span class="leaderboard-name"
+                    >Sophea Chan
+                    <span class="badge badge-top"
+                      ><i class="fa-solid fa-crown" aria-hidden="true"></i> Top
+                      learner</span
+                    ></span
+                  >
                   <span class="leaderboard-xp">2,450 XP</span>
                 </li>
-
                 <li
                   class="leaderboard-item"
                   aria-label="Rank 2, Dara Vong, 2180 XP"
@@ -962,7 +641,6 @@
                   <span class="leaderboard-name">Dara Vong</span>
                   <span class="leaderboard-xp">2,180 XP</span>
                 </li>
-
                 <li
                   class="leaderboard-item"
                   aria-label="Rank 3, Mealea Sok, 1940 XP"
@@ -972,7 +650,6 @@
                   <span class="leaderboard-name">Mealea Sok</span>
                   <span class="leaderboard-xp">1,940 XP</span>
                 </li>
-
                 <li
                   class="leaderboard-item"
                   aria-label="Rank 4, Rithy Kem, 1675 XP"
@@ -982,26 +659,60 @@
                   <span class="leaderboard-name">Rithy Kem</span>
                   <span class="leaderboard-xp">1,675 XP</span>
                 </li>
-
                 <li
                   class="leaderboard-item is-current"
-                  aria-label="Rank 5, Sokha (you), 1240 XP"
+                  aria-label="Rank 5, Sokha (you)"
                 >
                   <span class="leaderboard-rank" aria-hidden="true">5</span>
                   <span class="avatar" aria-hidden="true">SK</span>
-                  <span class="leaderboard-name">
-                    Sokha
-                    <span class="badge badge-you">You</span>
-                  </span>
-                  <span class="leaderboard-xp">1,240 XP</span>
+                  <span class="leaderboard-name"
+                    >Sokha <span class="badge badge-you">You</span></span
+                  >
+                  <span class="leaderboard-xp">You</span>
                 </li>
               </ol>
-
               <p class="leaderboard-footnote">
-                Earn <strong>60 XP</strong> more to pass Rithy Kem.
-                <span lang="km">រក XP បន្ថែម ៦០ ដើម្បីឡើងចំណាត់ថ្នាក់។</span>
+                Earn more XP to climb the board.
+                <span lang="km">រក XP បន្ថែមដើម្បីឡើងចំណាត់ថ្នាក់។</span>
               </p>
             </article>
+          </section>
+
+          <!-- ========================================================
+             J. LESSON VIEW (hidden until a lesson is opened)
+             ======================================================== -->
+          <section
+            class="lesson-view"
+            id="lesson-view"
+            aria-labelledby="lesson-view-title"
+            hidden
+          >
+            <div class="lesson-view-topbar">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="back-to-lessons-btn"
+              >
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                Back to Lessons
+              </button>
+              <p
+                class="lesson-view-position"
+                id="lesson-view-position"
+                aria-live="polite"
+              ></p>
+              <button
+                type="button"
+                class="btn btn-outline"
+                id="next-lesson-btn"
+              >
+                Next Lesson
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="lesson-view-body" id="lesson-view-body"></div>
+            <div class="lesson-view-footer" id="lesson-view-footer"></div>
           </section>
         </main>
 
@@ -1011,9 +722,9 @@
         <footer class="site-footer">
           <div class="footer-inner">
             <div class="footer-brand">
-              <span class="brand-icon" aria-hidden="true">
-                <i class="fa-solid fa-code-branch"></i>
-              </span>
+              <span class="brand-icon" aria-hidden="true"
+                ><i class="fa-solid fa-code-branch"></i
+              ></span>
               <div>
                 <p class="footer-brand-name">GitQuest</p>
                 <p class="footer-mission" id="about">
@@ -1049,17 +760,16 @@
               </ul>
             </nav>
           </div>
-
           <p class="footer-copy">
             © 2025 GitQuest. Built for learners in Cambodia.
           </p>
         </footer>
       </div>
-      <!-- /.main-column -->
     </div>
-    <!-- /.app-layout -->
 
-    <!-- Project script -->
+    <!-- Toast for transient messages -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <script src="js/app.js" defer></script>
   </body>
 </html>
