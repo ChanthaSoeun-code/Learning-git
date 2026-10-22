@@ -1,23 +1,25 @@
 /* ============================================================
    GitQuest — Stylesheet
    frontend/css/Style.css
-   ============================================================
+
    Table of contents
-   1.  Design tokens (CSS custom properties)
+   1.  Design tokens
    2.  Reset & base
    3.  Accessibility helpers
-   4.  Layout (app shell, sidebar, main column)
+   4.  Layout
    5.  Sidebar navigation
    6.  Header / topbar
    7.  Buttons
    8.  Cards & badges
-   9.  Hero section
+   9.  Hero
    10. Progress section
    11. Lesson cards
    12. Quiz & challenge feature cards
    13. Leaderboard
    14. Footer
-   15. Responsive breakpoints
+   15. Lesson view (Git Basics)
+   16. Toast
+   17. Responsive breakpoints
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -96,7 +98,6 @@
 
   /* Layout */
   --sidebar-width: 260px;
-  --topbar-height: auto;
 
   /* Transitions */
   --transition-fast: 120ms ease;
@@ -199,7 +200,6 @@ code {
   color: var(--color-text);
 }
 
-/* Custom scrollbar (WebKit) */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -250,7 +250,7 @@ code {
 }
 
 /* ------------------------------------------------------------
-   4. LAYOUT — APP SHELL
+   4. LAYOUT
    ------------------------------------------------------------ */
 .app-layout {
   display: grid;
@@ -281,12 +281,11 @@ code {
   overflow-y: auto;
 }
 
-/* Brand */
 .brand {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-2) var(--space-2);
+  padding: var(--space-2);
   color: var(--color-text);
   border-radius: var(--radius-md);
   transition: background-color var(--transition-fast);
@@ -329,7 +328,6 @@ code {
   color: var(--color-text-muted);
 }
 
-/* Nav list */
 .sidebar-nav {
   flex: 1;
 }
@@ -344,7 +342,7 @@ code {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-3) var(--space-3);
+  padding: var(--space-3);
   color: var(--color-text-muted);
   font-size: var(--fs-base);
   font-weight: 500;
@@ -377,7 +375,6 @@ code {
   color: var(--color-accent);
 }
 
-/* Sidebar footnote */
 .sidebar-footnote {
   padding: var(--space-3) var(--space-2) 0;
   border-top: 1px solid var(--color-border);
@@ -420,7 +417,6 @@ code {
   color: var(--color-text);
 }
 
-/* Search */
 .search-form {
   display: flex;
   align-items: center;
@@ -460,7 +456,6 @@ code {
 .search-input::placeholder {
   color: var(--color-text-subtle);
 }
-
 .search-input:focus {
   outline: none;
 }
@@ -485,7 +480,6 @@ code {
   color: var(--color-accent);
 }
 
-/* Profile area */
 .profile-area {
   display: flex;
   align-items: center;
@@ -563,7 +557,6 @@ code {
   color: var(--color-text-muted);
 }
 
-/* Avatar */
 .avatar {
   display: inline-flex;
   align-items: center;
@@ -604,7 +597,6 @@ code {
 .btn:active {
   transform: translateY(1px);
 }
-
 .btn i {
   font-size: 0.85em;
 }
@@ -787,7 +779,6 @@ code {
 .section:last-of-type {
   border-bottom: none;
 }
-
 .section-head {
   margin-bottom: var(--space-6);
 }
@@ -804,7 +795,6 @@ code {
   font-size: var(--fs-sm);
 }
 
-/* Progress overview */
 .progress-overview {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -848,7 +838,6 @@ code {
   color: var(--color-text-muted);
 }
 
-/* Progress bar */
 .progress-bar {
   appearance: none;
   -webkit-appearance: none;
@@ -880,7 +869,6 @@ progress.progress-bar::-moz-progress-bar {
   border-radius: var(--radius-pill);
 }
 
-/* Stat grid */
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1009,7 +997,6 @@ progress.progress-bar::-moz-progress-bar {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
   line-height: 1.55;
-  flex-grow: 0;
 }
 
 .lesson-desc-km {
@@ -1257,7 +1244,6 @@ progress.progress-bar::-moz-progress-bar {
 .leaderboard-item.is-top .leaderboard-xp {
   color: var(--color-yellow);
 }
-
 .leaderboard-item.is-current .leaderboard-xp {
   color: var(--color-accent);
 }
@@ -1351,7 +1337,6 @@ progress.progress-bar::-moz-progress-bar {
 .footer-links a:hover {
   color: var(--color-accent);
 }
-
 .footer-links a i {
   font-size: 0.7rem;
   opacity: 0.7;
@@ -1365,366 +1350,16 @@ progress.progress-bar::-moz-progress-bar {
 }
 
 /* ------------------------------------------------------------
-   15. RESPONSIVE BREAKPOINTS
+   15. LESSON VIEW — Git Basics
    ------------------------------------------------------------ */
 
-/* Large tablets & small desktops */
-@media (max-width: 1100px) {
-  :root {
-    --sidebar-width: 220px;
-  }
-
-  .topbar {
-    padding: var(--space-4) var(--space-6);
-  }
-
-  .section,
-  .hero {
-    padding: var(--space-8) var(--space-6);
-  }
-
-  .hero {
-    gap: var(--space-6);
-  }
-
-  .hero-title {
-    font-size: var(--fs-2xl);
-  }
-
-  .progress-overview {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-card {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-card-actions {
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    min-width: 0;
-  }
-
-  .feature-card-actions .btn {
-    width: auto;
-  }
-}
-
-/* Tablets */
-@media (max-width: 880px) {
-  .app-layout {
-    grid-template-columns: 1fr;
-  }
-
-  /* Turn the sidebar into a horizontal top nav */
-  .sidebar {
-    position: sticky;
-    top: 0;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-3) var(--space-4);
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-    overflow-x: auto;
-    overflow-y: hidden;
-    z-index: 200;
-  }
-
-  .brand {
-    flex-shrink: 0;
-  }
-
-  .brand-tagline,
-  .sidebar-footnote {
-    display: none;
-  }
-
-  .sidebar-nav {
-    flex: 0 0 auto;
-  }
-
-  .nav-list {
-    flex-direction: row;
-    gap: var(--space-1);
-  }
-
-  .nav-link {
-    padding: var(--space-2) var(--space-3);
-    white-space: nowrap;
-    font-size: var(--fs-sm);
-  }
-
-  .nav-link span {
-    display: none;
-  }
-
-  .nav-link i {
-    width: auto;
-    font-size: 1rem;
-  }
-
-  /* Active state gets a label pill so it's identifiable */
-  .nav-link.is-active span {
-    display: inline;
-  }
-
-  .topbar {
-    position: static;
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-4);
-    padding: var(--space-5) var(--space-5);
-  }
-
-  .topbar-intro {
-    flex: 0 0 auto;
-  }
-
-  .topbar-title {
-    font-size: var(--fs-lg);
-  }
-
-  .search-form {
-    max-width: none;
-    flex: 0 0 auto;
-  }
-
-  .profile-area {
-    margin-left: 0;
-    justify-content: space-between;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: var(--space-8) var(--space-5);
-    text-align: left;
-  }
-
-  .hero-visual {
-    order: -1;
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
-  .section {
-    padding: var(--space-8) var(--space-5);
-  }
-
-  .stat-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lesson-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
-
-  .footer-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .site-footer {
-    padding: var(--space-6) var(--space-5);
-  }
-}
-
-/* Phones */
-@media (max-width: 520px) {
-  :root {
-    --fs-3xl: 1.75rem;
-    --fs-2xl: 1.5rem;
-    --fs-xl: 1.25rem;
-  }
-
-  .topbar-greeting {
-    font-size: var(--fs-xs);
-  }
-
-  .topbar-title {
-    font-size: var(--fs-md);
-  }
-
-  .level-summary {
-    display: none;
-  }
-
-  .profile-chip-text {
-    display: none;
-  }
-
-  .profile-chip {
-    padding: var(--space-1);
-  }
-
-  .hero-title {
-    font-size: var(--fs-2xl);
-  }
-
-  .hero-text {
-    font-size: var(--fs-base);
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .stat-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lesson-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-card {
-    padding: var(--space-4);
-  }
-
-  .feature-meta {
-    gap: var(--space-2);
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .feature-card-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .feature-card-actions .btn {
-    width: 100%;
-  }
-
-  .leaderboard-name {
-    font-size: var(--fs-sm);
-  }
-
-  .leaderboard-xp {
-    font-size: var(--fs-xs);
-  }
-
-  .leaderboard-item {
-    padding: var(--space-3) var(--space-2);
-    gap: var(--space-2);
-  }
-
-  .leaderboard-item .avatar {
-    width: 30px;
-    height: 30px;
-    font-size: var(--fs-xs);
-  }
-
-  .badge-top span {
-    display: none;
-  }
-
-  .section {
-    padding: var(--space-6) var(--space-4);
-  }
-
-  .site-footer {
-    padding: var(--space-6) var(--space-4);
-  }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .lesson-card:hover {
-    transform: none;
-  }
-}
-
-/* ============================================================
-   LESSON SYSTEM — additions
-   ============================================================ */
-
-/* Hide dashboard sections while a lesson is open */
+/* Hide the dashboard and the lesson view when [hidden] is set,
+   even if other rules set display: grid / flex. */
 .dashboard-section[hidden],
 .lesson-view[hidden] {
   display: none !important;
 }
 
-/* ---------- Lesson card states ---------- */
-.lesson-card {
-  cursor: default;
-}
-.lesson-card.is-completed {
-  border-color: rgba(63, 185, 80, 0.35);
-}
-.lesson-card.is-in-progress {
-  border-color: rgba(227, 179, 65, 0.35);
-}
-.lesson-card.is-locked {
-  opacity: 0.6;
-}
-.lesson-card.is-locked:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.lesson-card.is-completed .lesson-icon {
-  background: var(--color-green-soft);
-  color: var(--color-green);
-}
-.lesson-card.is-in-progress .lesson-icon {
-  background: var(--color-yellow-soft);
-  color: var(--color-yellow);
-}
-.lesson-card.is-locked .lesson-icon {
-  background: var(--color-bg-subtle);
-  color: var(--color-text-subtle);
-}
-
-.lesson-card-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-  justify-content: flex-end;
-}
-
-.lesson-status-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px var(--space-2);
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  border-radius: var(--radius-pill);
-  background: var(--color-bg-subtle);
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-border);
-}
-.lesson-status-completed {
-  background: var(--color-green-soft);
-  color: var(--color-green);
-  border-color: rgba(63, 185, 80, 0.3);
-}
-.lesson-status-in-progress {
-  background: var(--color-yellow-soft);
-  color: var(--color-yellow);
-  border-color: rgba(227, 179, 65, 0.3);
-}
-.lesson-status-locked {
-  background: var(--color-bg-subtle);
-  color: var(--color-text-subtle);
-}
-
-/* ---------- Lesson view ---------- */
 .lesson-view {
   padding: var(--space-8);
   max-width: 1000px;
@@ -1747,6 +1382,17 @@ progress.progress-bar::-moz-progress-bar {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
   font-family: var(--font-mono);
+  margin: 0;
+}
+
+.lesson-next-note {
+  margin: 0 0 var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(88, 166, 255, 0.35);
+  border-radius: var(--radius-md);
+  color: var(--color-accent);
+  font-size: var(--fs-sm);
 }
 
 .lesson-header-block {
@@ -1778,8 +1424,9 @@ progress.progress-bar::-moz-progress-bar {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  margin-bottom: var(--space-2);
+  margin: 0 0 var(--space-2);
 }
+
 .lesson-title-large:focus {
   outline: none;
 }
@@ -1787,9 +1434,9 @@ progress.progress-bar::-moz-progress-bar {
 .lesson-title-km {
   font-size: var(--fs-md);
   color: var(--color-text-subtle);
+  margin: 0;
 }
 
-/* ---------- Lesson body sections ---------- */
 .lesson-section {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
@@ -1801,20 +1448,22 @@ progress.progress-bar::-moz-progress-bar {
 .lesson-section-title {
   font-size: var(--fs-lg);
   font-weight: 600;
-  margin-bottom: var(--space-4);
+  margin: 0 0 var(--space-4);
   padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--color-border);
 }
 
 .lesson-text {
   color: var(--color-text-muted);
-  margin-bottom: var(--space-3);
+  margin: 0 0 var(--space-3);
   line-height: 1.7;
 }
+
 .lesson-text:last-child {
   margin-bottom: 0;
 }
 
+/* Objectives */
 .objectives-list {
   display: flex;
   flex-direction: column;
@@ -1827,6 +1476,7 @@ progress.progress-bar::-moz-progress-bar {
   color: var(--color-text-muted);
   line-height: 1.6;
 }
+
 .objectives-list li::before {
   content: "✓";
   position: absolute;
@@ -1841,6 +1491,7 @@ progress.progress-bar::-moz-progress-bar {
   border-collapse: collapse;
   font-size: var(--fs-sm);
 }
+
 .vocab-table th,
 .vocab-table td {
   text-align: left;
@@ -1848,6 +1499,7 @@ progress.progress-bar::-moz-progress-bar {
   border-bottom: 1px solid var(--color-border);
   vertical-align: top;
 }
+
 .vocab-table th {
   font-size: var(--fs-xs);
   text-transform: uppercase;
@@ -1855,11 +1507,13 @@ progress.progress-bar::-moz-progress-bar {
   color: var(--color-text-subtle);
   font-weight: 600;
 }
+
 .vocab-table td:first-child {
   font-family: var(--font-mono);
   color: var(--color-accent);
   white-space: nowrap;
 }
+
 .vocab-table td:nth-child(2) {
   color: var(--color-text);
 }
@@ -1886,6 +1540,7 @@ progress.progress-bar::-moz-progress-bar {
   white-space: pre;
   line-height: 1.6;
 }
+
 .command-line {
   background: #0a0e14;
   color: var(--color-green);
@@ -1893,13 +1548,16 @@ progress.progress-bar::-moz-progress-bar {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 .command-line code,
 .output-block code {
   background: none;
   border: none;
   padding: 0;
   color: inherit;
+  white-space: pre;
 }
+
 .output-block {
   background: var(--color-bg-inset);
   color: var(--color-text-muted);
@@ -1909,6 +1567,7 @@ progress.progress-bar::-moz-progress-bar {
   border-top-right-radius: 0;
 }
 
+/* Practice hint */
 .practice-hint {
   margin-top: var(--space-3);
   padding: var(--space-3) var(--space-4);
@@ -1917,21 +1576,23 @@ progress.progress-bar::-moz-progress-bar {
   border-radius: var(--radius-md);
   font-size: var(--fs-sm);
 }
+
 .practice-hint summary {
   cursor: pointer;
   color: var(--color-accent);
   font-weight: 500;
 }
+
 .practice-hint p {
-  margin-top: var(--space-2);
+  margin: var(--space-2) 0 0;
   color: var(--color-text-muted);
 }
 
-/* ---------- Quiz ---------- */
+/* Quiz */
 .quiz-intro {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
-  margin-bottom: var(--space-4);
+  margin: 0 0 var(--space-4);
 }
 
 .quiz-form {
@@ -1984,6 +1645,7 @@ progress.progress-bar::-moz-progress-bar {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
 }
+
 .quiz-option:hover {
   border-color: var(--color-border-strong);
   background: var(--color-bg-subtle);
@@ -2002,9 +1664,11 @@ progress.progress-bar::-moz-progress-bar {
   cursor: pointer;
   position: relative;
 }
+
 .quiz-option input[type="radio"]:checked {
   border-color: var(--color-accent);
 }
+
 .quiz-option input[type="radio"]:checked::after {
   content: "";
   position: absolute;
@@ -2012,6 +1676,7 @@ progress.progress-bar::-moz-progress-bar {
   border-radius: 50%;
   background: var(--color-accent);
 }
+
 .quiz-option input[type="radio"]:disabled {
   cursor: not-allowed;
 }
@@ -2021,6 +1686,7 @@ progress.progress-bar::-moz-progress-bar {
   background: var(--color-green-soft);
   color: var(--color-text);
 }
+
 .quiz-option.is-correct input[type="radio"] {
   border-color: var(--color-green);
 }
@@ -2033,6 +1699,7 @@ progress.progress-bar::-moz-progress-bar {
   background: var(--color-orange-soft);
   color: var(--color-text);
 }
+
 .quiz-option.is-wrong input[type="radio"] {
   border-color: var(--color-orange);
 }
@@ -2041,16 +1708,18 @@ progress.progress-bar::-moz-progress-bar {
 }
 
 .quiz-feedback {
-  margin-top: var(--space-3);
+  margin: var(--space-3) 0 0;
   font-size: var(--fs-sm);
   line-height: 1.6;
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-md);
 }
+
 .quiz-feedback.is-correct {
   color: var(--color-green);
   background: var(--color-green-soft);
 }
+
 .quiz-feedback.is-wrong {
   color: var(--color-orange);
   background: var(--color-orange-soft);
@@ -2070,12 +1739,14 @@ progress.progress-bar::-moz-progress-bar {
   border-radius: var(--radius-md);
   min-height: 1px;
 }
+
 .quiz-result.is-pass {
   color: var(--color-green);
   background: var(--color-green-soft);
   padding: var(--space-3) var(--space-4);
   border: 1px solid rgba(63, 185, 80, 0.35);
 }
+
 .quiz-result.is-fail {
   color: var(--color-orange);
   background: var(--color-orange-soft);
@@ -2083,48 +1754,9 @@ progress.progress-bar::-moz-progress-bar {
   border: 1px solid rgba(247, 129, 102, 0.35);
 }
 
-/* ---------- Completion footer ---------- */
-.lesson-view-footer {
-  margin-top: var(--space-6);
-}
-
-.completion-panel {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  padding: var(--space-5);
-  background: var(--color-accent-soft);
-  border: 1px solid rgba(88, 166, 255, 0.35);
-  border-radius: var(--radius-lg);
-}
-
-.completion-message {
-  color: var(--color-text);
-  font-weight: 500;
-}
-
-.completion-hint {
-  font-size: var(--fs-sm);
-  color: var(--color-text-muted);
-  text-align: center;
-  padding: var(--space-3);
-}
-
-.completion-done {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-4);
-  background: var(--color-green-soft);
-  border: 1px solid rgba(63, 185, 80, 0.35);
-  border-radius: var(--radius-lg);
-  color: var(--color-green);
-  font-weight: 600;
-}
-
-/* ---------- Toast ---------- */
+/* ------------------------------------------------------------
+   16. TOAST
+   ------------------------------------------------------------ */
 .toast {
   position: fixed;
   left: 50%;
@@ -2143,12 +1775,168 @@ progress.progress-bar::-moz-progress-bar {
   transition: transform var(--transition-base);
   pointer-events: none;
 }
+
 .toast.is-visible {
   transform: translate(-50%, 0);
 }
 
-/* ---------- Responsive tweaks for lesson view ---------- */
+/* ------------------------------------------------------------
+   17. RESPONSIVE BREAKPOINTS
+   ------------------------------------------------------------ */
+
+/* Large tablets & small desktops */
+@media (max-width: 1100px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .topbar {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .section,
+  .hero {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .hero {
+    gap: var(--space-6);
+  }
+  .hero-title {
+    font-size: var(--fs-2xl);
+  }
+
+  .progress-overview {
+    grid-template-columns: 1fr;
+  }
+  .feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card-actions {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .feature-card-actions .btn {
+    width: auto;
+  }
+}
+
+/* Tablets */
 @media (max-width: 880px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    overflow-y: hidden;
+    z-index: 200;
+  }
+
+  .brand {
+    flex-shrink: 0;
+  }
+
+  .brand-tagline,
+  .sidebar-footnote {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex: 0 0 auto;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: var(--space-1);
+  }
+
+  .nav-link {
+    padding: var(--space-2) var(--space-3);
+    white-space: nowrap;
+    font-size: var(--fs-sm);
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .nav-link i {
+    width: auto;
+    font-size: 1rem;
+  }
+
+  .nav-link.is-active span {
+    display: inline;
+  }
+
+  .topbar {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+    padding: var(--space-5);
+  }
+
+  .topbar-intro {
+    flex: 0 0 auto;
+  }
+  .topbar-title {
+    font-size: var(--fs-lg);
+  }
+
+  .search-form {
+    max-width: none;
+    flex: 0 0 auto;
+  }
+
+  .profile-area {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: var(--space-8) var(--space-5);
+    text-align: left;
+  }
+
+  .hero-visual {
+    order: -1;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .lesson-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .site-footer {
+    padding: var(--space-6) var(--space-5);
+  }
+
   .lesson-view {
     padding: var(--space-5);
   }
@@ -2163,7 +1951,101 @@ progress.progress-bar::-moz-progress-bar {
   }
 }
 
+/* Phones */
 @media (max-width: 520px) {
+  :root {
+    --fs-3xl: 1.75rem;
+    --fs-2xl: 1.5rem;
+    --fs-xl: 1.25rem;
+  }
+
+  .topbar-greeting {
+    font-size: var(--fs-xs);
+  }
+  .topbar-title {
+    font-size: var(--fs-md);
+  }
+  .level-summary {
+    display: none;
+  }
+  .profile-chip-text {
+    display: none;
+  }
+  .profile-chip {
+    padding: var(--space-1);
+  }
+
+  .hero-title {
+    font-size: var(--fs-2xl);
+  }
+  .hero-text {
+    font-size: var(--fs-base);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: var(--space-4);
+  }
+
+  .feature-meta {
+    gap: var(--space-2);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .feature-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .feature-card-actions .btn {
+    width: 100%;
+  }
+
+  .leaderboard-name {
+    font-size: var(--fs-sm);
+  }
+  .leaderboard-xp {
+    font-size: var(--fs-xs);
+  }
+
+  .leaderboard-item {
+    padding: var(--space-3) var(--space-2);
+    gap: var(--space-2);
+  }
+
+  .leaderboard-item .avatar {
+    width: 30px;
+    height: 30px;
+    font-size: var(--fs-xs);
+  }
+
+  .badge-top span {
+    display: none;
+  }
+
+  .section {
+    padding: var(--space-6) var(--space-4);
+  }
+  .site-footer {
+    padding: var(--space-6) var(--space-4);
+  }
+
   .lesson-section {
     padding: var(--space-4);
   }
@@ -2173,16 +2055,105 @@ progress.progress-bar::-moz-progress-bar {
   .lesson-view-topbar .btn {
     flex: 1 1 auto;
   }
+
   .lesson-view-position {
     order: 3;
     width: 100%;
     text-align: center;
   }
-  .completion-panel {
-    flex-direction: column;
-    align-items: stretch;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  .completion-panel .btn {
-    width: 100%;
+
+  .lesson-card:hover {
+    transform: none;
+  }
+}
+/* ============================================================
+   PROGRESS & XP — additions
+   ============================================================ */
+
+/* Completed lesson card */
+.lesson-card.is-completed {
+  border-color: rgba(63, 185, 80, 0.35);
+}
+.lesson-card.is-completed .lesson-icon {
+  background: var(--color-green-soft);
+  color: var(--color-green);
+}
+
+/* Status badge shown on the card head */
+.lesson-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 3px var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+.lesson-status-completed {
+  background: var(--color-green-soft);
+  color: var(--color-green);
+  border-color: rgba(63, 185, 80, 0.3);
+}
+.lesson-status-in-progress {
+  background: var(--color-yellow-soft);
+  color: var(--color-yellow);
+  border-color: rgba(227, 179, 65, 0.3);
+}
+
+.lesson-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  justify-content: flex-end;
+}
+
+/* Footer reset link */
+.footer-reset {
+  display: inline;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--color-text-subtle);
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.footer-reset:hover {
+  color: var(--color-orange);
+}
+
+/* Level-up pulse on the header badge (subtle, one-shot) */
+@keyframes gq-level-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(227, 179, 65, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(227, 179, 65, 0);
+  }
+}
+.level-badge.is-level-up {
+  animation: gq-level-pulse 600ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .level-badge.is-level-up {
+    animation: none;
   }
 }
